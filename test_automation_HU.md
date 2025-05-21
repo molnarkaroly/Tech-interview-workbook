@@ -254,12 +254,6 @@ A modern weboldalak dinamikusan töltődnek be, ezért az automatizált tesztekn
     *   Az explicit vagy fluent várakozás során a megadott időkereten belül nem teljesült a várt feltétel. 
     *   Lassú hálózati kapcsolat vagy szerverválasz.
 
-1
-
-
-
-1
-
 
 *   **`ElementNotInteractableException` (Az elem nem interaktív):**
     *   Az elem megtalálható a DOM-ban és látható, de valamilyen okból nem lehet vele interakcióba lépni (pl. kattintani, szöveget beírni).
@@ -269,13 +263,83 @@ A modern weboldalak dinamikusan töltődnek be, ezért az automatizált tesztekn
     *   Az elem még animáció alatt áll.
 
 *   **`StaleElementReferenceException` (Elavult elem referencia):**
-    *   Az elem DOM-struktúrája megváltozott (pl. AJAX frissítés, oldal navigáció) az elem megtalálása és a vele való interakció kísérlete között. [29] Az elem korábbi referenciája már nem érvényes. 
-    *   Megoldás: Újra meg kell keresni az elemet a művelet előtt.
+    *   Az elem DOM-struktúrája megváltozott (pl. AJAX frissítés, oldal navigáció) az elem megtalálása és a vele való interakció kísérlete között.  Az elem korábbi referenciája már nem érvényes. 
+    *   `Megoldás`: Újra meg kell keresni az elemet a művelet előtt.
 
 #### ✅ Hasonlítsd össze a POM és a Keyword Driven Testing megközelítéseket!
 
+
+**POM (Page Object Model):** 
+*   Az alkalmazás UI-ját oldalakra bontja; minden oldal egy osztály, ami az elemeit és a velük végezhető műveleteket tartalmazza.
+*   Főleg UI változások könnyebb kezelésére és olvashatóbb tesztkódra fókuszál.
+
+**Keyword Driven Testing (KDT):**
+*   A teszteket kulcsszavak sorozatából (pl. "bejelentkezés", "adatbevitel") építi fel, melyekhez konkrét implementációk (kód) tartoznak.
+*   `Célja`, hogy kevésbé technikai személyek is írhassanak teszteket és az adatvezérelt tesztelést támogassa.
+
+**Összehasonlítás dióhéjban:**
+
+| Jellemző            | POM (Page Object Model)                             | Keyword Driven Testing (KDT)                           |
+| :------------------ | :-------------------------------------------------- | :--------------------------------------------------- |
+| **Absztrakciós Egység** | Weboldalak/UI Komponensek                           | Műveletek                              |
+| **Teszt Írás**      | Programozási nyelven | Jellemzően táblázatos forma, kulcsszavak használata |
+| **Fő Előny**        | UI változások könnyű kezelése, kódszintű olvashatóság | Tesztek írása kevesebb technikai tudással|
+| **Komplexitás**     | Közepes             | Magas  |
+| **Technikai Tudás (tesztíró)** | Programozási ismeret szükséges        | Kevesebb (kulcsszó használathoz)                       |
+
+
 #### ✅ Mi a különbség a TDD és BDD között?
+
+**TDD (Test-Driven Development):**
+*   **Fókusz:** A kód *egységeinek* (funkciók, metódusok) helyes működése.
+*   **Cél:** Jobb kódszerkezet, kevesebb hiba
+*   **"Ki?"**: Főleg a fejlesztők.
+
+**BDD (Behavior-Driven Development):**
+*   **Fókusz:** Az alkalmazás *viselkedésének* leírása és tesztelése természetes nyelven, az üzleti elvárások alapján. A tesztek példákon keresztül (szcenáriók) definiálják, hogyan kell működnie a szoftvernek.
+*   **Cél:** Jobb kommunikáció és együttműködés az üzleti és technikai oldalak között, a szoftver az elvárt üzleti értéket szállítja.
+*   **"Ki?"**: Csapatmunka (fejlesztők, tesztelők, üzleti elemzők, terméktulajdonosok).
+
+| Jellemző            | TDD (Tesztvezérelt Fejlesztés)          | BDD (Viselkedésvezérelt Fejlesztés)             |
+| :------------------ | :------------------------------------ | :------------------------------------------- |
+| **Elsődleges Cél**  | Kód funkcionalitásának ellenőrzése      | Alkalmazás viselkedésének validálása          |
+| **Nézőpont**        | Fejlesztői, "belülről kifelé"           | Üzleti/Felhasználói, "kívülről befelé"         |
+| **Együttműködés**  | Főleg fejlesztői fókuszú                 | Csapat szintű (üzlet, fejlesztők)      |
+| **Teszt Nyelve**    | Általában programozási nyelv  | Természetes nyelvhez közeli   |
+| **Fókusz**          | Kód egységei, implementációs részletek  | Rendszer viselkedése, üzleti érték             |
+| **Eredmény**        | Jól tesztelt, moduláris kód             | Közösen megértett, az elvárásoknak megfelelő szoftver |
+
+**Fontos:** A BDD nem helyettesíti a TDD-t, hanem kiegészíti azt. 
 
 #### ✅ Mi az API tesztelés és miért hasznos?
 
+
+**Mi az API Tesztelés?**
+
+*   Az alkalmazásprogramozási felületek (API-k) közvetlen tesztelése.
+*   A szoftver üzleti logikájának ellenőrzése felhasználói felület (UI) nélkül.
+*   `Fókuszban`: *funkcionalitás, megbízhatóság, teljesítmény, biztonság*
+
+**Miért Hasznos?**
+
+*   **Korai Hibafelismerés:** Problémák azonosítása az üzleti logikában, mielőtt a UI elkészül.
+*   **Gyorsabb Tesztek:** Jelentősen gyorsabb, mint a UI tesztek, mert nincs UI renderelés. 
+*   **Nagyobb Tesztlefedettség:** Olyan logikák is tesztelhetők, amik UI-n keresztül nehezen elérhetők.
+*   **Nyelv- és Platformfüggetlenség:** Szabványos protokollok (HTTP) és formátumok (JSON/XML)
+*   **Stabilabb Tesztek:** API interfészek ritkábban változnak, mint a UI, így kevesebb a tesztkarbantartás.
+*   **Költséghatékonyság:** Gyorsabb, korábbi hibajavítás olcsóbb.
+*   **Biztonsági Tesztelés:** Fontos a hitelesítés, engedélyezés és adatvédelem ellenőrzésére.
+*   **Integrációs Tesztek Könnyítése:** Komponensek és mikroszolgáltatások együttműködésének hatékony ellenőrzése.
+
 #### ✅ Mi az adatvezérelt tesztelés és miért hasznos?
+
+Az adatvezérelt tesztelés egy olyan szoftvertesztelési módszertan, ahol a tesztadatokat (bemeneti értékek és elvárt kimenetek) külső adatforrásokból (pl. Excel táblázat, CSV fájl, adatbázis) olvassuk be, ahelyett, hogy fixen a tesztkódba égetnénk őket. Ugyanazt a tesztlogikát (szkriptet) hajtjuk végre többször, különböző tesztadat-készletekkel.
+
+**Miért Hasznos?**
+
+*   **Nagyobb Tesztlefedettség Könnyedén:** Lehetővé teszi ugyanazon funkció tesztelését számos különböző adatbevitellel (pozitív, negatív, határértékek), növelve a lefedettséget minimális extra kódírással.
+*   **Újrahasznosíthatóság és Hatékonyság:** Ugyanaz a tesztszkript használható több adatsorral, csökkentve a redundanciát.
+*   **Adatok és Tesztlogika Szétválasztása:** Tisztábbá és karbantarthatóbbá teszi a tesztkódot, mivel a tesztadatok függetlenek a tesztlogikától. 
+*   **Könnyebb Karbantartás:** A tesztadatok módosítása vagy bővítése nem igényel változtatást a tesztszkriptben, csak a külső adatforrás frissítését. 
+*   **Kevesebb Teszteset (Kódsor):** Egyetlen szkript képes sokféle adatvariációt kezelni.
+*   **Nem technikai felhasználók bevonása:** A tesztadatokat olyan személyek is könnyebben kezelhetik és bővíthetik, akik nem rendelkeznek mély programozási ismeretekkel.
