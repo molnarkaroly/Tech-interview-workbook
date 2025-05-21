@@ -31,3 +31,4 @@
 
 
 <img src="https://promanconsulting.hu/wp-content/uploads/2022/03/agilis-modszertanok-optimized.jpg" width="550" height="400">
+
