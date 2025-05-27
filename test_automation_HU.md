@@ -1,4 +1,10 @@
-# Tesztautomatizálási kérdések
+<span style="
+    background-image: linear-gradient(to right,rgb(42, 126, 9),rgb(15, 3, 122));
+    color: white; 
+    padding: 3px 20px; 
+    border-radius: 10px;
+    font-size: 25px;
+">Tesztautomatizálási kérdések </span>
 
 ## Tesztelési alapok (ISTQB-hez kapcsolódó)
 <img src="https://www.mindsmapped.com/wp-content/uploads/2016/06/ISTQB.jpg" alt="image" width="300" height="220">
