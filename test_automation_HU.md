@@ -4,38 +4,151 @@
 <img src="https://www.mindsmapped.com/wp-content/uploads/2016/06/ISTQB.jpg" alt="image" width="300" height="220">
 
 #### ✅ Mi a tesztelés célja? Mi nem az?
-A tesztelés célja, hogy felfedezze a hibákat és biztosítsa, hogy egy rendszer vagy termék megfelelően működjön. A tesztelés nem helyettesíti a fejlesztést, nem előzi meg a hibákat, nem dönt a végleges termék jóváhagyásáról, és nem a felhasználói visszajelzések gyűjtésére szolgál.
+#### A tesztelés célja:
+- felfedezze a hibákat
+- biztosítsa, hogy egy rendszer vagy termék megfelelően működjön
+#### A tesztelés nem helyettesíti
+- a fejlesztést
+- nem előzi meg a hibákat
+- nem dönt a végleges termék jóváhagyásáról
+- nem a felhasználói visszajelzések gyűjtésére szolgál.
 
 #### ✅ Mik a tesztelési alapelvek?
-A tesztelési alapelvek közé tartozik a hibák felfedezése, amely segít a minőség biztosításában. A teljes tesztelés lehetetlen, így kockázatértékelés alapján történik a tesztelés. A korai tesztelés segít a költségek csökkentésében. A hibakumuláció azt jelenti, hogy a hibák gyakran halmozódnak egyes modulokban. A hibák újraellenőrzése szükséges, mivel a hibajavítások újabb hibákat okozhatnak. A tesztelés kontextusfüggő, azaz különböző megközelítést igényel különböző projektek esetén. A hiedelmekkel ellentétben a tesztelés nem garantálja a hibamentességet.
+
+-   **Hibák Felfedezése:**
+    -   A tesztelés célja a hibák felfedezése.
+    -   Segít a minőség biztosításában.
+
+-   **Teljes Tesztelés Lehetetlensége:**
+    -   A teljes tesztelés lehetetlen.
+    -   A tesztelés kockázatértékelés alapján történik.
+
+-   **Korai Tesztelés:**
+    -   Segít a költségek csökkentésében.
+
+-   **Hibák Újraellenőrzése:**
+    -   Szükséges.
+    -   Ennek oka, hogy a hibajavítások újabb hibákat okozhatnak.
+
+-   **Kontextusfüggő Tesztelés:**
+    -   Különböző megközelítést igényel különböző projektek esetén.
+
+-   **Nem Garantálja a Hibamentességet:**
+    -   A hiedelmekkel ellentétben a tesztelés nem garantálja a hibamentességet.
 
 #### ✅ Mi az egységtesztelés (unit testing)? Ki felelős az egységtesztek írásáért?
-Az egységtesztelés a szoftverfejlesztés egy módszere, amely során a szoftver legkisebb egységeit, azaz a funkciókat vagy metódusokat teszteljük külön-külön, hogy megbizonyosodjunk arról, hogy helyesen működnek. Az egységtesztek megírásáért általában a fejlesztők felelősek, mivel ők ismerik legjobban a kódot és annak működését. Az egységtesztelés segít a hibák korai felismerésében és javításában, valamint hozzájárul a kód minőségének javításához.
+-   **Definíció:**
+    -   Szoftverfejlesztési módszer.
+    -   A szoftver legkisebb egységeinek (funkciók, metódusok) külön-külön történő tesztelése.
+    -   Célja: megbizonyosodni arról, hogy helyesen működnek.
+
+-   **Felelős Személyek:**
+    -   Általában a fejlesztők.
+    -   Ok: ők ismerik legjobban a kódot és annak működését.
+
+-   **Előnyök/Célok:**
+    -   Segít a hibák korai felismerésében és javításában.
+    -   Hozzájárul a kód minőségének javításához.
 
 #### ✅ Mik a tesztszintek, és mi a különbség köztük?
-A tesztszintek a komponens, integrációs, rendszer, rendszerintegrációs és elfogadási tesztelés. Ezek a tesztszintek a rendszer egyre nagyobb egységeit tesztelik, a legkisebb egységektől a teljes rendszerig.
+-   **Tesztszintek:**
+    -   Komponens tesztelés
+    -   Integrációs tesztelés
+    -   Rendszer tesztelés
+    -   Rendszerintegrációs tesztelés
+    -   Elfogadási tesztelés
+
+-   **Különbség:**
+    -   Ezek a tesztszintek a rendszer egyre nagyobb egységeit tesztelik.
+    -   A tesztelés a legkisebb egységektől a teljes rendszerig halad.
 
 #### ✅ Mi a különbség a verifikáció és a validáció között?
-A verifikáció azt jelenti, hogy egy termék vagy szolgáltatás megfelel-e a specifikációnak, azaz hogy helyesen lett-e megvalósítva. A validáció pedig azt jelenti, hogy egy termék vagy szolgáltatás megfelel-e a felhasználó elvárásainak, azaz hogy hasznos-e a felhasználó számára. A különbség az, hogy a verifikáció a specifikáció szerinti működést vizsgálja, míg a validáció a felhasználó elvárásai szerinti működést vizsgálja.
+-   **Verifikáció:**
+    -   Azt jelenti, hogy egy termék vagy szolgáltatás megfelel-e a specifikációnak.
+    -   Vizsgálja, hogy "helyesen lett-e megvalósítva".
+    -   A specifikáció szerinti működést vizsgálja.
+
+-   **Validáció:**
+    -   Azt jelenti, hogy egy termék vagy szolgáltatás megfelel-e a felhasználó elvárásainak.
+    -   Vizsgálja, hogy "hasznos-e a felhasználó számára".
+    -   A felhasználó elvárásai szerinti működést vizsgálja.
+
+-   **Különbség:**
+    -   A verifikáció a specifikáció szerinti működést vizsgálja.
+    -   A validáció a felhasználó elvárásai szerinti működést vizsgálja.
 
 #### ✅ Mik a tesztelési típusok, és mi a különbség köztük?
-A tesztelési típusok a funkcionális tesztelés, a nem funkcionális tesztelés és a biztonsági tesztelés. A funkcionális tesztelés a szoftver funkcióit teszteli, a nem funkcionális tesztelés a szoftver nem funkcionális jellemzőit teszteli, mint például a teljesítményt, a biztonságot és a felhasználói élményt. A biztonsági tesztelés a szoftver biztonsági jellemzőit és ellenálló képességét teszteli.
+-   **Teszttípusok:**
+    -   Funkcionális tesztelés
+    -   Nem funkcionális tesztelés
+    -   Biztonsági tesztelés
+
+-   **Különbségek / Jellemzők:**
+    -   **Funkcionális tesztelés:**
+        -   A szoftver funkcióit teszteli.
+    -   **Nem funkcionális tesztelés:**
+        -   A szoftver nem funkcionális jellemzőit teszteli.
+        -   Példák: teljesítmény, biztonság (általános jellemzőként), felhasználói élmény.
+    -   **Biztonsági tesztelés:**
+        -   A szoftver biztonsági jellemzőit és ellenálló képességét teszteli.
 
 #### ✅ Mi a különbség a fehér doboz, szürke doboz és fekete doboz tesztelés között?
-A fehér doboz tesztelés során a tesztelő ismeri a kód belső működését, és ez alapján írja a teszteket. A szürke doboz tesztelés során a tesztelő részleges ismeretekkel rendelkezik a kód belső működéséről, és ennek alapján írja a teszteket. A fekete doboz tesztelés során a tesztelő nem ismeri a kód belső működését, és a teszteket anélkül írja. A különbség, hogy a fehér doboz tesztelés részletes ismereteket igényel a kód belső működéséről, míg a fekete doboz tesztelés nem igényel ilyen ismereteket.
+-   **Fehér Doboz Tesztelés:**
+    -   A tesztelő ismeri a kód belső működését.
+    -   Ez alapján írja a teszteket.
+
+-   **Szürke Doboz Tesztelés:**
+    -   A tesztelő részleges ismeretekkel rendelkezik a kód belső működéséről.
+    -   Ennek alapján írja a teszteket.
+
+-   **Fekete Doboz Tesztelés:**
+    -   A tesztelő nem ismeri a kód belső működését.
+    -   A teszteket anélkül írja.
+
+
 #### ✅ Mi a különbség a felhasználói elfogadási teszt (UAT) és a rendszerteszt között?
-A felhasználói elfogadási teszt a rendszer tesztelésének egy fázisa, amely során a felhasználók ellenőrzik, hogy a rendszer megfelel-e a felhasználói elvárásoknak. A rendszerteszt a teljes rendszer tesztelését jelenti, amely során a rendszer funkcionalitását, teljesítményét és biztonságát tesztelik. A különbség, hogy a UAT a felhasználói elvárásokra fókuszál, míg a rendszerteszt a teljes rendszerre.
+-   **Felhasználói Elfogadási Teszt (UAT):**
+    -   A rendszer tesztelésének egy fázisa.
+    -   Során a felhasználók ellenőrzik, hogy a rendszer megfelel-e a felhasználói elvárásoknak.
+    -   A felhasználói elvárásokra fókuszál.
+
+-   **Rendszerteszt:**
+    -   A teljes rendszer tesztelését jelenti.
+    -   Során a rendszer funkcionalitását, teljesítményét és biztonságát tesztelik.
+    -   A teljes rendszerre fókuszál.
+
+-   **Különbség:**
+    -   A **UAT** a felhasználói elvárásokra fókuszál.
+    -   A **rendszerteszt** a teljes rendszerre fókuszál.
+
 #### ✅ Sorolj fel különbségeket a regressziós tesztelés, a füsttesztelés és az újratesztelés között!
 
-- A regressziós tesztelés a változtatások hatását vizsgálja.
-- A füsttesztelés a szoftver kritikus részeit teszteli.
-- Az újratesztelés pedig a hibajavítások hatását vizsgálja.
+- A **regressziós** tesztelés a változtatások hatását vizsgálja.
+- A **füsttesztelés** a szoftver kritikus részeit teszteli.
+- Az **újratesztelés** pedig a hibajavítások hatását vizsgálja.
 
 #### ✅ Mi a különbség a statikus és dinamikus tesztelés között?
 A statikus tesztelés során a kód áttekintése történik, hogy megtaláljuk a hibákat, míg a dinamikus tesztelés során a kód futtatása történik, hogy megtaláljuk a hibákat.
 
 ### ✅ Hasonlítsd össze a V-modellt, a vízesés modellt és az Agile megközelítést a tesztelés szempontjából!
-A V-modellben a tesztelés a fejlesztési fázisokkal párhuzamosan történik, míg a vízesés modellben a tesztelés egy későbbi fázisban történik. Az Agile megközelítésben a tesztelés iteratív folyamat, amely a fejlesztési ciklusokkal párhuzamosan történik. A V-modellben a tesztelés célja a minőség biztosítása, míg a vízesés modellben a tesztelés célja a hibák keresése. Az Agile megközelítésben a tesztelés célja a minőség biztosítása és a hibák keresése.
+#### 1. V-modell
+-   **Tesztelés Időzítése:**
+    -   A fejlesztési fázisokkal párhuzamosan történik.
+-   **Tesztelés Célja:**
+    -   A **minőség** biztosítása.
+
+#### 2. Vízesés Modell (Waterfall)
+-   **Tesztelés Időzítése:**
+    -   Egy későbbi fázisban történik.
+-   **Tesztelés Célja:**
+    -   A **hibák** keresése.
+
+#### 3. Agile Megközelítés
+-   **Tesztelés Időzítése:**
+    -   Iteratív folyamat.
+    -   A fejlesztési ciklusokkal párhuzamosan történik.
+-   **Tesztelés Célja:**
+    -   A **minőség** biztosítása **és** a **hibák** keresése.
 
 
 <img src="https://t4.ftcdn.net/jpg/03/90/15/65/360_F_390156585_8w1lsOyICIAOvDCU8tExXW2QwLCOFwXD.jpg" alt="image" width="550" height="400">
@@ -343,3 +456,4 @@ Az adatvezérelt tesztelés egy olyan szoftvertesztelési módszertan, ahol a te
 *   **Könnyebb Karbantartás:** A tesztadatok módosítása vagy bővítése nem igényel változtatást a tesztszkriptben, csak a külső adatforrás frissítését. 
 *   **Kevesebb Teszteset (Kódsor):** Egyetlen szkript képes sokféle adatvariációt kezelni.
 *   **Nem technikai felhasználók bevonása:** A tesztadatokat olyan személyek is könnyebben kezelhetik és bővíthetik, akik nem rendelkeznek mély programozási ismeretekkel.
+
