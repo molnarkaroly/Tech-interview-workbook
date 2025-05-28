@@ -463,3 +463,56 @@ Az adatvezérelt tesztelés egy olyan szoftvertesztelési módszertan, ahol a te
 *   **Kevesebb Teszteset (Kódsor):** Egyetlen szkript képes sokféle adatvariációt kezelni.
 *   **Nem technikai felhasználók bevonása:** A tesztadatokat olyan személyek is könnyebben kezelhetik és bővíthetik, akik nem rendelkeznek mély programozási ismeretekkel.
 
+#### ✅ Mi az adatvezérelt tesztelés és miért hasznos?
+### Mi az adatvezérelt tesztelés?
+
+*   **Definíció:** Olyan szoftvertesztelési módszertan, ahol a tesztelési adatok (bemenetek és várt kimenetek) elkülönülnek a tesztlogikától (a tesztszkripttől).
+*   **Működés:** Ugyanaz a tesztszkript futtatható többször, különböző adatállományokkal.
+*   **Adatforrás:** Az adatokat külső forrásból olvassa be (pl. CSV, Excel táblázat, adatbázis, XML).
+
+### Miért hasznos?
+
+*   **Újrafelhasználhatóság:**
+    *   A tesztlogika többször felhasználható eltérő adatokkal.
+*   **Karbantarthatóság:**
+    *   Könnyebb az adatokat frissíteni, mint magát a kódot módosítani.
+    *   A tesztadatok és a tesztlogika külön kezelhető, módosítható.
+*   **Nagyobb tesztlefedettség:**
+    *   Könnyen lehet sokféle forgatókönyvet (pozitív, negatív, határesetek) tesztelni új adatsorok hozzáadásával.
+*   **Hatékonyság:**
+    *   Kevesebb ismétlődő kód, gyorsabb tesztkészítés.
+    *   Automatizálás esetén különösen előnyös.
+*   **Skálázhatóság:**
+    *   Új tesztesetek hozzáadása gyakran csak új adatok hozzáadását jelenti a külső fájlba/adatbázisba.
+*   **Átláthatóság:**
+    *   A tesztadatok egy helyen, strukturáltan kezelhetők, könnyebben áttekinthetők.
+    *   Nem műszaki szakemberek (pl. üzleti elemzők) is könnyebben hozzájárulhatnak a tesztadatok készítéséhez.
+
+#### ✅ Mik a kihívások és ajánlott eljárások a dinamikusan betöltött webes elemekkel?
+
+####  Kihívások:
+
+*   **Időzítés:** Az elem nincs ott/kész, amikor a teszt keresi.
+*   **Aszinkronitás:** AJAX/JS műveletek miatt nehéz megjósolni az elemek állapotát.
+*   **Instabil lokátorok:** Dinamikusan generált ID-k, DOM változások.
+
+#### Ajánlott Eljárások:
+
+*   **Explicit Várakozás (`WebDriverWait`):** Várj egy adott feltételre (pl. láthatóság, kattinthatóság).
+*   **Stabil Szelektorok:** Használj egyedi, megbízható lokátorokat (pl. `data-testid`).
+*   **Oldal Objektum Modell (POM):** Várakozási logikát az oldal objektumokba építeni.
+*   **`Thread.sleep()` kerülése:** Megbízhatatlan és lassú.
+
+#### ✅ Mik a mobil tesztautomatizálás kihívásai?
+
+
+## Haladó témák
+<img src="https://www.softwaretestinghelp.com/wp-content/qa/uploads/2020/05/DevOps-in-a-Selenium-Testing.png" alt="image" width="320" height="220">
+
+#### ✅ Mi a különbség a CI és CD között?
+
+#### ✅ Írj le egy Continuous Delivery folyamatot!
+
+#### ✅ Hasonlítsd össze két népszerű CI rendszert, ezek közül az egyik legyen a Jenkins!
+
+#### ✅ Mi a Docker és miért hasznos?
