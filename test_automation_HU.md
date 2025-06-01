@@ -347,10 +347,6 @@ Gyakori Tesztjelentések és Részleteik
 
 #### ✅ Hogyan lehet várni az elemekre, és mi lehet a probléma? Gyűjtsd össze a lehetséges hibákat és okokat!
 
-### Hogyan Lehet Várni Elemekre, és Mi Lehet a Probléma?
-
-A modern weboldalak dinamikusan töltődnek be, ezért az automatizált teszteknek gyakran várniuk kell, amíg egy elem elérhetővé vagy interaktívvá válik. [26]
-
 **Várakozási Stratégiák:**
 
 *   **Implicit Várakozás (Implicit Wait):**
@@ -504,15 +500,74 @@ Az adatvezérelt tesztelés egy olyan szoftvertesztelési módszertan, ahol a te
 *   **`Thread.sleep()` kerülése:** Megbízhatatlan és lassú.
 
 #### ✅ Mik a mobil tesztautomatizálás kihívásai?
-
+*   Sokféle **eszköz** és **OS verzió** nehezíti a tesztelést.
+*   Az **Android** és **iOS** eltérő tesztelési logikát igényel.
+*   A **gyakori frissítések** folyamatos tesztkarbantartást igényelnek.
+*   Az **emulátorok** korlátai és a **valódi** eszközpark költségei.
+*   Az instabil (flaky) tesztek megbízhatósága kihívást jelent.
+*   A tesztek **futtatása sok eszközön** időigényes.
+*   **Megfelelő** eszköz és **keretrendszer** kiválasztása nehéz.
 
 ## Haladó témák
 <img src="https://www.softwaretestinghelp.com/wp-content/qa/uploads/2020/05/DevOps-in-a-Selenium-Testing.png" alt="image" width="320" height="220">
 
 #### ✅ Mi a különbség a CI és CD között?
+**CI (Folyamatos Integráció):**
+
+*   **Lényeg:** Kódok gyakori egyesítése + automatikus tesztelés.
+*   **Cél:** Hibák gyors felfedezése.
+
+**CD (Folyamatos Szállítás / Telepítés):**
+
+*   **Szállítás (Delivery):**
+    *   **Lényeg:** CI után a szoftver *mindig kiadásra kész*.
+    *   **DE:** Élesítés még lehet kézi döntés.
+
+*   **Telepítés (Deployment):**
+    *   **Lényeg:** Minden sikeres build *automatikusan élesbe kerül*.
+    *   **NINCS kézi döntés az élesítés előtt.**
+
+**Egyszerűen:**
+
+*   **CI:** Építsd és teszteld gyakran!
+*   **CD (Delivery):** Legyen mindig kész a kiadásra!
+*   **CD (Deployment):** Add ki automatikusan, ha jó!
 
 #### ✅ Írj le egy Continuous Delivery folyamatot!
+1.  **Fejlesztő kódot ír és beadja (commit).**
+2.  **CI rendszer automatikusan buildel és egységteszteket futtat.**
+3.  **Sikeres buildből telepíthető csomag (artifact) készül.**
+4.  **Az artifact automatikusan települ egy teszt/staging környezetbe.**
+5.  **Automatizált elfogadási tesztek (pl. UI, API) futnak le ezen a környezeten.**
+6.  **Ha minden teszt sikeres, a szoftver "élesítésre késznek" minősül.**
+7.  **Ekkor egy üzleti vagy operatív döntés alapján (manuális jóváhagyás, pl. gombnyomás) indítják el az élesítést.**
+8.  **A jóváhagyott csomag (nagyrészt) automatikusan települ az éles környezetbe.**
+9.  **Az éles rendszer monitorozása folyamatos.**
 
-#### ✅ Hasonlítsd össze két népszerű CI rendszert, ezek közül az egyik legyen a Jenkins!
+A szoftver *mindig* készen áll a kiadásra, de az élesítés pillanatát még egy emberi döntés előzi meg.
+**Jenkins vs. GitLab CI/CD**
+
+| Funkció / Szempont        | Jenkins                                                                 | GitLab CI/CD                                                              |
+| :------------------------ | :---------------------------------------------------------------------- | :------------------------------------------------------------------------ |
+| **Alapkoncepció**         | Dedikált, önálló CI/CD szerver.                                         | A GitLab platform (verziókezelés, issue tracking stb.) beépített része.   |
+| **Konfiguráció**          | Főleg UI-n keresztül (klasszikus) vagy `Jenkinsfile` (Pipeline-as-Code Groovy szkripttel). | `.gitlab-ci.yml` fájl a repository-ban (YAML alapú).                     |
+| **Bővíthetőség**          | Hatalmas plugin ökoszisztéma szinte mindenre. Erőssége és néha gyengesége is. | Kevesebb pluginra támaszkodik, sok funkció beépített. Docker image-eket használ a build környezetekhez. |
+| **Integráció**            | Bármilyen verziókezelővel, eszközzel integrálható pluginok révén.         | Természetesen a GitLab repository-kkal a legszorosabb, de külső repo-kat is támogat korlátozottan. |
+| **Telepítés/Hosting**     | Jellemzően self-hosted (saját szerveren/infrastruktúrán fut).           | GitLab.com (SaaS, megosztott runnerekkel) vagy self-hosted GitLab instance. |
+| **Felhasználói Felület**  | Hagyományosabb, funkcionális. A Blue Ocean plugin modernizálja.          | Modern, a GitLab teljes felületébe integrált.                            |
+| **Egyszerűség**            | Kezdeti beállítása és a pluginok kezelése lehet bonyolultabb.           | Ha már GitLab-et használsz, a CI/CD beállítása általában egyszerűbb.       |
+| **"Minden egyben"**       | Nem, fókusz a CI/CD-n. Más DevOps eszközökkel integrálni kell.          | Igen, a GitLab egy teljes DevOps platformot kínál (SCM, CI/CD, registry, issues ...). |
+| **Költség**               | Nyílt forráskódú, ingyenes (de a futtatási infrastruktúra költséges lehet). | Ingyenes csomag (GitLab.com-on korlátokkal), fizetős csomagok több funkcióval/erőforrással. Self-hosted Community Edition ingyenes. |
 
 #### ✅ Mi a Docker és miért hasznos?
+**Mi a Docker?**
+
+A Docker egy platform, ami alkalmazásokat és minden függőségüket (könyvtárak, beállítások stb.) egységes, hordozható csomagokba, ún. **konténerekbe** zárja.
+
+**Miért hasznos?**
+
+*   **Konzisztencia:** Az alkalmazás ugyanúgy fut bárhol (fejlesztői gépen, teszten, élesben).
+*   **Hordozhatóság:** Könnyen mozgathatók a konténerek különböző környezetek között.
+*   **Izoláció:** Az alkalmazások elkülönítve futnak, nincsenek ütközések.
+*   **Hatékonyság:** Gyorsabb és erőforrás-takarékosabb, mint a teljes virtuális gépek.
+*   **Egyszerűbb telepítés:** Leegyszerűsíti az alkalmazások beüzemelését és skálázását.
